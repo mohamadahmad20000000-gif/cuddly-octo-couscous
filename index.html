@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Google</title>
+    <style>
+        body { margin: 0; display: flex; flex-direction: column; align-items: center; height: 100vh; font-family: arial, sans-serif; background: white; transition: 1s; overflow-x: hidden; }
+        .google-home { margin-top: 15vh; text-align: center; width: 100%; }
+        .logo { font-size: 80px; font-weight: bold; margin-bottom: 30px; }
+        .g-blue { color: #f06292; } .g-red { color: #ba68c8; } .g-yellow { color: #ffd54f; } .g-green { color: #81c784; }
+        .search-box { width: 580px; max-width: 90%; height: 44px; border: 1px solid #dfe1e5; border-radius: 24px; padding: 0 20px; font-size: 16px; outline: none; }
+        .buttons { margin-top: 30px; }
+        .btn { background-color: #f8f9fa; border: 1px solid #f8f9fa; padding: 10px 16px; margin: 5px; border-radius: 4px; cursor: pointer; }
+        #surprise { display: none; width: 100%; background: linear-gradient(to bottom, #fff0f5, #f3e5f5); min-height: 250vh; text-align: center; padding-top: 50px; }
+        .main-img { width: 90%; max-width: 450px; border-radius: 20px; border: 8px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 20px 0; }
+        .heart { position: fixed; color: #f06292; animation: fall linear forwards; }
+        @keyframes fall { to { transform: translateY(100vh); } }
+    </style>
+</head>
+<body>
+    <div id="google-view" class="google-home">
+        <div class="logo"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></div>
+        <input type="text" class="search-box" placeholder="ابحث عن أجمل بنت بالعالم...">
+        <div class="buttons">
+            <button class="btn" onclick="start()">بحث Google</button>
+            <button class="btn" onclick="start()">ضربة حظ</button>
+        </div>
+    </div>
+
+    <div id="surprise">
+        <h1 style="color: #d81b60; font-size: 2.5rem;">كل عام وأنتِ ملكة قلبي 🌸</h1>
+        <img src="https://lh3.googleusercontent.com/d/1-0_fGjNf8V-u9-U7f8n7E6Kz_K-O8vYy" class="main-img">
+        <div style="padding: 20px; font-size: 20px; color: #4a148c; line-height: 2;">
+            <p>اليوم هو اليوم الذي أشرقت فيه الدنيا بوجودك..</p>
+            <p>أردت أن تكون هديتي لكِ مختلفة، كاختلافك في قلبي.</p>
+            <p>اسحبي للأسفل لترين ذكرياتنا..</p>
+            <br><br>
+            <img src="https://lh3.googleusercontent.com/d/1-5-6-U7-9-U7f8n7E6Kz_K-O8vYy" class="main-img" style="max-width: 350px;">
+            <h2 style="color: #ad1457;">وعودي لكِ:</h2>
+            <p>أن أحبكِ أكثر في كل عام.. وأن أكون لكِ السند والأمان.</p>
+        </div>
+    </div>
+
+    <script>
+        function start() {
+            document.getElementById('google-view').style.display = 'none';
+            document.getElementById('surprise').style.display = 'block';
+            document.body.style.background = '#fff0f5';
+            setInterval(createHeart, 300);
+        }
+        function createHeart() {
+            const h = document.createElement('div');
+            h.classList.add('heart');
+            h.innerHTML = '🌸';
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(h);
+        }
+    </script>
+</body>
+</html>
